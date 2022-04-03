@@ -1,1 +1,49 @@
-#MEMBUAT SUIT DENGAN JAVA SCRIPT
+// player
+var player = prompt('ayuk suit \n gunting, batu, kertas');
+// komputer
+// membangkitkan bil random
+var comp = Math.random('');
+
+if (comp <0.34){
+    comp = 'gunting'
+} else if (comp >0.34 && comp <0.67){
+    comp = 'batu'
+}else{
+    comp = 'kertas'
+}
+
+// rules
+var hasil = '';
+
+if (player == comp){
+    hasil = ('SERI !!');
+} else if (player == 'gunting'){
+    // if (comp == 'batu'){
+    //     hasil = ('Kalah');
+    // }else {
+    //     hasil = ('Menang') 
+    // }
+
+    // ternari
+    hasil = (comp == 'batu') ? 'Kalah':'Menang';
+} else if (player == 'batu'){
+    if (comp == 'kertas'){
+        hasil = 'Kalah';
+    } else {
+        hasil = 'Menang';
+    }
+} else if (player == 'kertas'){
+    if (comp == 'gunting'){
+        hasil = 'Kalah';
+    } else {
+        hasil = 'Menang';
+    }
+} else {
+    hasil = ('salah kase masuk kau bro !!')
+}
+
+
+// hasil
+
+alert (' kamu memilih ' + player + " komputer memilih " + comp + " maka kamu " + hasil)
+
